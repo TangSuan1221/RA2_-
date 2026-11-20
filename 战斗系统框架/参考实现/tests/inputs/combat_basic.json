@@ -1,0 +1,36 @@
+{
+  "seed": 12345,
+  "ticks": 600,
+  "world": "fixtures/arena_flat.json",
+  "label": "基础战斗回放：接近→停步轻击连段→闪避→绕行→处决尝试→再战",
+  "notes": "move 是持续量（不写则沿用上一条）；attack/dodge/exec 是边沿触发（只在该 tick 生效）。同一 tick 只允许一条记录。",
+  "entities": {
+    "player": { "role": "player", "hp": 100, "spawn": [0, 0, 0], "yawDeg": 0 },
+    "ai": [
+      { "role": "veteran", "spawn": [0, 0, 6], "yawDeg": 180 },
+      { "role": "veteran", "spawn": [-3, 0, 5], "yawDeg": 180 },
+      { "role": "infected_runner", "spawn": [3.5, 0, 5.5], "yawDeg": 180 }
+    ]
+  },
+  "inputs": [
+    { "tick": 0, "move": [0, 1] },
+    { "tick": 24, "move": [0, 0] },
+    { "tick": 30, "attack": true },
+    { "tick": 46, "attack": true },
+    { "tick": 92, "attack": true },
+    { "tick": 128, "dodge": true },
+    { "tick": 150, "attack": true },
+    { "tick": 200, "attack": true },
+    { "tick": 220, "attack": true },
+    { "tick": 260, "move": [0.6, 0.8] },
+    { "tick": 288, "move": [0, 0] },
+    { "tick": 300, "attack": true },
+    { "tick": 340, "attack": true },
+    { "tick": 380, "dodge": true },
+    { "tick": 410, "attack": true },
+    { "tick": 430, "attack": true },
+    { "tick": 470, "exec": true },
+    { "tick": 520, "attack": true },
+    { "tick": 548, "attack": true }
+  ]
+}

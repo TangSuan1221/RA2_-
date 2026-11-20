@@ -15,6 +15,11 @@ verify-out.txt
 Thumbs.db
 desktop.ini
 
+# 烘焙生成物（可再生产物，不进仓库）：
+# 由 `node tools/bake-mm.mjs` 依据 public/data/anim/manifest.json 生成
+*.mmdb
+战斗系统框架/参考实现/public/data/anim/*.bin
+
 # 外围审计链（150 份平衡审计 + 37 份 EV 模拟脚本）：不属于战斗系统规格
 # 若要一并纳入仓库，删除下面两行后重新 add
 推演/

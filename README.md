@@ -15,11 +15,16 @@
 
 ```bash
 cd 战斗系统框架/参考实现
-node verify.mjs                     # 期望：33/33 通过
-node tools/check-doc-constants.mjs  # 期望：未登记 0
+node verify.mjs                      # 期望：33/33 通过（逻辑侧断言）
+node tools/validate-data.mjs          # 期望：11/11（数据包：10 章九条 + 帧数 + 跨文件一致性）
+node tools/bake-mm.mjs --check        # 期望：MMDB OK frames=6005 dims=32 pca=8 hz=30 flags=7
+node tests/replay.mjs --script tests/inputs/combat_basic.json --twice   # 期望：600 步哈希一致
+node tools/check-doc-constants.mjs    # 期望：未登记 0（304 个常量 ID 全部可追溯）
 ```
 
 无第三方依赖、无构建、逻辑侧零 `three` 依赖（因此能在 node 里无人值守跑完验收）。
+
+**体例说明**：参考实现用 `.mjs`（免构建、node 直跑）；`03`/`11`/`12` 章里的 `.ts` 路径是**目标工程的类型化形态**（如 `src/combat/slot.ts` ↔ 参考实现 `src/combat/slot.mjs`，逻辑一一对应）。执行 AI 用 TypeScript 时按 `03 §4` 的签名类型化即可，不要因为扩展名不同而另写一套。
 
 ## 目录
 
@@ -41,7 +46,12 @@ node tools/check-doc-constants.mjs  # 期望：未登记 0
   13-调试工具与性能验收.md            debug overlay 六页规格、replay 状态哈希、性能口径
   14-交接提示词-给另一个AI.md         一页可直接转发的施工提示词
   15-资料总目录与阅读地图.md          读什么、按什么顺序、什么不用读
-  参考实现/                           可跑基线（9 模块 + verify.mjs + verify-report.md）
+  16-素材与数值起步包.md               动画素材从哪来 + 三个必须你拍板的数值 + damage.json 草案
+  参考实现/
+    src/ 9 个纯 ESM 模块 + verify.mjs + verify-report.md
+    public/data/  6 个 JSON + anim/manifest.json（16 个片段清单）← 机器可读数据包
+    tools/  bake-mm.mjs（烘焙 mmdb/bin）· validate-data.mjs（11 条数据校验）· check-doc-constants.mjs
+    tests/  replay.mjs（逐帧状态哈希回放）· inputs/（2 个输入脚本）· fixtures/（3 个标准战场）
 GDD-幸存者裂城-v1.0-补丁版.md        ← 需求源头（E0）：撤离射击玩法规则
 研究/                                ← 逆向研究（E2/E3）：玩家尺度、垂直通行、掩体、地图设计
 ```

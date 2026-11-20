@@ -1,0 +1,28 @@
+{
+  "seed": 777,
+  "ticks": 480,
+  "world": "fixtures/arena_wall.json",
+  "label": "贴墙战场：验证背后延伸线被剔除后，敌人只能从正面/侧面接近",
+  "notes": "move 是持续量；attack/dodge/exec 是边沿触发；同一 tick 只允许一条记录。",
+  "entities": {
+    "player": { "role": "player", "hp": 100, "spawn": [0, 0, 0], "yawDeg": 0 },
+    "ai": [
+      { "role": "veteran", "spawn": [0, 0, -3], "yawDeg": 0 },
+      { "role": "flanker", "spawn": [-4, 0, 0], "yawDeg": 90 },
+      { "role": "flanker", "spawn": [4, 0, 0], "yawDeg": 270 }
+    ]
+  },
+  "inputs": [
+    { "tick": 0, "move": [0, 0] },
+    { "tick": 55, "attack": true },
+    { "tick": 72, "attack": true },
+    { "tick": 150, "dodge": true },
+    { "tick": 180, "attack": true },
+    { "tick": 240, "move": [0.7, 0.7] },
+    { "tick": 268, "move": [0, 0] },
+    { "tick": 300, "attack": true },
+    { "tick": 330, "attack": true },
+    { "tick": 400, "attack": true },
+    { "tick": 440, "exec": true }
+  ]
+}
