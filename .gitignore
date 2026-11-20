@@ -1,0 +1,21 @@
+# 依赖与构建产物
+node_modules/
+dist/
+*.tgz
+
+# 临时输出
+verify-out.txt
+*.tmp
+*.log
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 外围审计链（150 份平衡审计 + 37 份 EV 模拟脚本）：不属于战斗系统规格
+# 若要一并纳入仓库，删除下面两行后重新 add
+推演/
+模拟器/
