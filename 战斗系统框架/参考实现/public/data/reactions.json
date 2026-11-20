@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "directionBands": [
+    { "name": "front", "fromDeg": -45, "toDeg": 45 },
+    { "name": "right", "fromDeg": 45, "toDeg": 135 },
+    { "name": "back", "fromDeg": 135, "toDeg": 225 },
+    { "name": "left", "fromDeg": 225, "toDeg": 315 }
+  ],
+  "reactions": [
+    {
+      "id": "hit_light_front",
+      "trigger": { "dir": "front", "heavy": false, "poiseBreak": false },
+      "additive": { "clip": "add_light_front", "layer": "hitReaction", "weight": 0.85, "decayMs": 250 },
+      "hitstunMs": 220,
+      "lockLowerBody": false,
+      "knockbackScale": 1.0,
+      "sfx": "sfx_flesh_hit"
+    },
+    {
+      "id": "hit_light_left",
+      "trigger": { "dir": "left", "heavy": false, "poiseBreak": false },
+      "additive": { "clip": "add_light_front", "layer": "hitReaction", "weight": 0.75, "decayMs": 250 },
+      "hitstunMs": 220,
+      "lockLowerBody": false,
+      "knockbackScale": 0.9,
+      "sfx": "sfx_flesh_hit"
+    },
+    {
+      "id": "hit_light_right",
+      "trigger": { "dir": "right", "heavy": false, "poiseBreak": false },
+      "additive": { "clip": "add_light_front", "layer": "hitReaction", "weight": 0.75, "decayMs": 250 },
+      "hitstunMs": 220,
+      "lockLowerBody": false,
+      "knockbackScale": 0.9,
+      "sfx": "sfx_flesh_hit"
+    },
+    {
+      "id": "hit_light_back",
+      "trigger": { "dir": "back", "heavy": false, "poiseBreak": false },
+      "additive": { "clip": "add_light_front", "layer": "hitReaction", "weight": 0.9, "decayMs": 280 },
+      "hitstunMs": 260,
+      "lockLowerBody": false,
+      "knockbackScale": 1.1,
+      "sfx": "sfx_flesh_hit"
+    },
+    {
+      "id": "hit_heavy_front",
+      "trigger": { "dir": "front", "heavy": true, "poiseBreak": false },
+      "additive": { "clip": "add_light_front", "layer": "hitReaction", "weight": 1.0, "decayMs": 400 },
+      "hitstunMs": 420,
+      "lockLowerBody": false,
+      "knockbackScale": 1.4,
+      "sfx": "sfx_flesh_hit_heavy"
+    },
+    {
+      "id": "hit_heavy_left",
+      "trigger": { "dir": "left", "heavy": true, "poiseBreak": false },
+      "additive": { "clip": "add_light_front", "layer": "hitReaction", "weight": 0.95, "decayMs": 400 },
+      "hitstunMs": 420,
+      "lockLowerBody": false,
+      "knockbackScale": 1.3,
+      "sfx": "sfx_flesh_hit_heavy"
+    },
+    {
+      "id": "hit_heavy_right",
+      "trigger": { "dir": "right", "heavy": true, "poiseBreak": false },
+      "additive": { "clip": "add_light_front", "layer": "hitReaction", "weight": 0.95, "decayMs": 400 },
+      "hitstunMs": 420,
+      "lockLowerBody": false,
+      "knockbackScale": 1.3,
+      "sfx": "sfx_flesh_hit_heavy"
+    },
+    {
+      "id": "hit_heavy_back",
+      "trigger": { "dir": "back", "heavy": true, "poiseBreak": false },
+      "additive": { "clip": "add_light_front", "layer": "hitReaction", "weight": 1.0, "decayMs": 420 },
+      "hitstunMs": 460,
+      "lockLowerBody": false,
+      "knockbackScale": 1.5,
+      "sfx": "sfx_flesh_hit_heavy"
+    },
+    {
+      "id": "hit_heavy_front_break",
+      "trigger": { "dir": "front", "heavy": true, "poiseBreak": true },
+      "additive": { "clip": "add_stagger_front", "layer": "hitReaction", "weight": 1.0, "decayMs": 400 },
+      "hitstunMs": 900,
+      "lockLowerBody": true,
+      "knockbackScale": 1.6,
+      "sfx": "sfx_poise_break"
+    },
+    {
+      "id": "hit_heavy_back_break",
+      "trigger": { "dir": "back", "heavy": true, "poiseBreak": true },
+      "additive": { "clip": "add_stagger_front", "layer": "hitReaction", "weight": 1.0, "decayMs": 400 },
+      "hitstunMs": 900,
+      "lockLowerBody": true,
+      "knockbackScale": 1.7,
+      "sfx": "sfx_poise_break"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "profiles": {
+    "default": {
+      "armLength": 2.7,
+      "shoulderX": 0.52,
+      "pivotHeight": 1.58,
+      "probeRadius": 0.28,
+      "springK": 14.0,
+      "springDamp": 0.85,
+      "nearMin": 0.12,
+      "posLerp": 0.18,
+      "retractTimeMs": 60,
+      "recoverTimeMs": 280,
+      "shoulderSwitchMs": 250,
+      "pivotLagMs": 120,
+      "fov": { "base": 55, "sprint": 62, "aim": 42, "transitionMs": 220, "speedPow": 1.5 },
+      "shake": {
+        "traumaDecay": 1.8,
+        "maxPos": 0.09,
+        "maxRoll": 2.2,
+        "freq": 18.0,
+        "eps": 0.01,
+        "sources": {
+          "hitDealt": { "trauma": 0.35, "tauMs": 90 },
+          "hitTaken": { "trauma": 0.6, "tauMs": 120 },
+          "explosion": { "trauma": 1.0, "tauMs": 220 },
+          "execFinish": { "trauma": 0.8, "tauMs": 160 }
+        }
+      },
+      "aimAssist": { "coneDeg": 6, "maxDist": 25, "pullStrength": 0.35, "lockBreakMs": 600, "lockCooldownMs": 400 },
+      "view": { "lookaheadM": 6.0, "iterations": 4, "pullMaxM": 0.35, "coverShiftMaxM": 0.35 },
+      "occlusion": { "rayCount": 1, "clearMarginM": 0.05 }
+    },
+    "tight_indoor": {
+      "inherit": true,
+      "armLength": 1.9,
+      "shoulderX": 0.44,
+      "probeRadius": 0.24,
+      "fov": { "base": 60 },
+      "view": { "lookaheadM": 4.0, "pullMaxM": 0.28 }
+    }
+  },
+  "profileSwitch": {
+    "headClearanceM": 2.6,
+    "probeDirs": 4,
+    "probeDistM": 2.5,
+    "blockedDirsToSwitch": 3,
+    "transitionMs": 200
+  }
+}

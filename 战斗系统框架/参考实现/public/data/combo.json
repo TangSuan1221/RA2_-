@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "graphs": {
+    "unarmed": {
+      "entry": "atk_light_01",
+      "nodes": {
+        "atk_light_01": {
+          "edges": [
+            { "to": "atk_light_02", "fromPct": 0.6, "require": "hit" },
+            { "to": "dodge_back", "fromPct": 0.5, "require": "always", "allowEarly": true }
+          ]
+        },
+        "atk_light_02": {
+          "edges": [
+            { "to": "atk_heavy_01", "fromPct": 0.7, "require": "hit", "input": "heavy" },
+            { "to": "exec_finisher", "fromPct": 0.6, "require": "target_staggered" }
+          ]
+        },
+        "atk_heavy_01": {
+          "edges": [{ "to": "dodge_back", "fromPct": 0.75, "require": "whiff" }]
+        },
+        "dodge_back": {
+          "edges": [{ "to": "atk_light_01", "fromPct": 0.85, "require": "always" }]
+        },
+        "exec_finisher": { "edges": [] },
+        "reaction_knockdown": { "edges": [] }
+      }
+    }
+  }
+}

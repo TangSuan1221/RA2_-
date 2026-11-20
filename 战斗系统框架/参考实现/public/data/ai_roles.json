@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "roles": [
+    {
+      "id": "veteran",
+      "label": "人类老练敌兵",
+      "perception": { "viewDist": 32, "fovDeg": 110, "fovDegCombat": 150, "noticeMs": 350, "noticeMsFar": 1100 },
+      "hearing": { "walk": 6, "sprint": 14, "gunshot": 55, "silenced": 8, "whistle": 25 },
+      "stats": { "hp": 100, "mass": 78, "poise": 60, "maxSpeed": 3.35 },
+      "melee": {
+        "tellScale": 1.0,
+        "approachSpeed": 4.2,
+        "walkSpeed": 1.8,
+        "attackTable": ["atk_light_01", "atk_light_02", "atk_heavy_01"],
+        "finisherTable": ["exec_finisher"],
+        "feintChance": 0.25,
+        "feintCancelPct": 0.4,
+        "giveUpMs": 2500,
+        "approachTimeoutMs": 1200,
+        "preferHeight": "any",
+        "politeWindowMs": 200,
+        "attackGapMs": 250
+      },
+      "social": { "canShout": true, "shoutRadius": 25, "shareDelayMs": 400, "shareRadius": 18, "shareFalloff": 0.5, "shoutRepeatMs": 3000 },
+      "slotRole": "attacker"
+    },
+    {
+      "id": "flanker",
+      "label": "人类包抄者",
+      "perception": { "viewDist": 32, "fovDeg": 110, "fovDegCombat": 150, "noticeMs": 350, "noticeMsFar": 1100 },
+      "hearing": { "walk": 6, "sprint": 14, "gunshot": 55, "silenced": 8, "whistle": 25 },
+      "stats": { "hp": 80, "mass": 78, "poise": 40, "maxSpeed": 5.6 },
+      "melee": {
+        "tellScale": 1.0,
+        "approachSpeed": 5.2,
+        "walkSpeed": 2.2,
+        "attackTable": ["atk_light_01", "atk_light_02"],
+        "finisherTable": [],
+        "feintChance": 0.15,
+        "feintCancelPct": 0.4,
+        "giveUpMs": 3000,
+        "approachTimeoutMs": 1500,
+        "preferHeight": "low",
+        "politeWindowMs": 200,
+        "attackGapMs": 250
+      },
+      "social": { "canShout": true, "shoutRadius": 20, "shareDelayMs": 400, "shareRadius": 18, "shareFalloff": 0.5, "shoutRepeatMs": 3000 },
+      "slotRole": "flanker"
+    },
+    {
+      "id": "infected_runner",
+      "label": "感染者·疾行者",
+      "perception": { "viewDist": 16, "fovDeg": 150, "fovDegCombat": 150, "noticeMs": 180, "noticeMsFar": 600 },
+      "hearing": { "walk": 10, "sprint": 20, "gunshot": 70, "silenced": 12, "whistle": 30 },
+      "stats": { "hp": 45, "mass": 62, "poise": 0, "maxSpeed": 5.0 },
+      "melee": {
+        "tellScale": 1.25,
+        "approachSpeed": 5.0,
+        "walkSpeed": 2.1,
+        "attackTable": ["atk_light_01"],
+        "finisherTable": [],
+        "feintChance": 0.0,
+        "feintCancelPct": 0.4,
+        "giveUpMs": 1500,
+        "approachTimeoutMs": 900,
+        "preferHeight": "any",
+        "politeWindowMs": 0,
+        "attackGapMs": 150
+      },
+      "social": { "canShout": false, "shoutRadius": 0, "shareDelayMs": 0, "shareRadius": 8, "shareFalloff": 0.7, "shoutRepeatMs": 0 },
+      "slotRole": "rusher",
+      "horde": { "attackMax": 3, "useSlots": false, "lungeStyle": "straight" }
+    }
+  ]
+}

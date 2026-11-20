@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "id": "arena_pillars",
+  "label": "正前方 ±40° 三根 r=0.4m 柱子（距玩家 2.0m），用于验证槽位净空与外推",
+  "bounds": { "minX": -10, "maxX": 10, "minZ": -10, "maxZ": 10 },
+  "groundY": 0,
+  "obstacles": [
+    { "id": "pillar_l", "kind": "circle", "x": -1.2856, "z": 1.5321, "r": 0.4, "height": 2.4 },
+    { "id": "pillar_c", "kind": "circle", "x": 0.0, "z": 2.0, "r": 0.4, "height": 2.4 },
+    { "id": "pillar_r", "kind": "circle", "x": 1.2856, "z": 1.5321, "r": 0.4, "height": 2.4 }
+  ],
+  "props": [],
+  "playerSpawn": { "pos": [0, 0, 0], "yawDeg": 0 }
+}

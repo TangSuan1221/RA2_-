@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "id": "arena_flat",
+  "label": "开阔平地 30×30m（无遮挡）",
+  "bounds": { "minX": -15, "maxX": 15, "minZ": -15, "maxZ": 15 },
+  "groundY": 0,
+  "obstacles": [],
+  "props": [],
+  "playerSpawn": { "pos": [0, 0, 0], "yawDeg": 0 }
+}

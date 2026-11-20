@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "sampleHz": 30,
+  "skeleton": {
+    "id": "humanoid_20",
+    "bones": [
+      "root", "hips", "spine", "chest", "neck", "head",
+      "shoulder_l", "upperarm_l", "lowerarm_l", "hand_l",
+      "shoulder_r", "upperarm_r", "lowerarm_r", "hand_r",
+      "upperleg_l", "lowerleg_l", "foot_l",
+      "upperleg_r", "lowerleg_r", "foot_r"
+    ],
+    "anchors": {
+      "target_chest": "chest",
+      "target_neck": "neck",
+      "target_hand_l": "hand_l",
+      "target_hand_r": "hand_r"
+    }
+  },
+  "clips": [
+    { "id": "idle", "file": "anim/idle.bin", "durationSec": 40.0, "loop": true, "tag": "idle", "speed": 0.0, "notifies": [] },
+    { "id": "walk", "file": "anim/walk.bin", "durationSec": 40.0, "loop": true, "tag": "walk", "speed": 1.55, "notifies": [{ "t": 0.52, "type": "footstep", "param": "l" }, { "t": 1.04, "type": "footstep", "param": "r" }] },
+    { "id": "jog", "file": "anim/jog.bin", "durationSec": 40.0, "loop": true, "tag": "jog", "speed": 3.35, "notifies": [{ "t": 0.32, "type": "footstep", "param": "l" }, { "t": 0.64, "type": "footstep", "param": "r" }] },
+    { "id": "sprint", "file": "anim/sprint.bin", "durationSec": 40.0, "loop": true, "tag": "sprint", "speed": 5.6, "notifies": [{ "t": 0.26, "type": "footstep", "param": "l" }, { "t": 0.52, "type": "footstep", "param": "r" }] },
+    { "id": "crouch", "file": "anim/crouch.bin", "durationSec": 40.0, "loop": true, "tag": "crouch", "speed": 1.05, "notifies": [{ "t": 0.8, "type": "footstep", "param": "l" }, { "t": 1.6, "type": "footstep", "param": "r" }] },
+    { "id": "atk_light_01", "file": "anim/atk_light_01.bin", "durationSec": 0.65, "loop": false, "tag": "action", "speed": 0.0, "notifies": [{ "t": 0.26, "type": "tell" }, { "t": 0.35, "type": "hitbox_on" }, { "t": 0.44, "type": "hitbox_off" }] },
+    { "id": "atk_light_01_wall", "file": "anim/atk_light_01_wall.bin", "durationSec": 0.65, "loop": false, "tag": "action", "speed": 0.0, "notifies": [{ "t": 0.26, "type": "tell" }, { "t": 0.35, "type": "hitbox_on" }, { "t": 0.44, "type": "hitbox_off" }] },
+    { "id": "atk_light_01_table", "file": "anim/atk_light_01_table.bin", "durationSec": 0.65, "loop": false, "tag": "action", "speed": 0.0, "notifies": [{ "t": 0.26, "type": "tell" }, { "t": 0.35, "type": "hitbox_on" }, { "t": 0.44, "type": "hitbox_off" }] },
+    { "id": "atk_light_02", "file": "anim/atk_light_02.bin", "durationSec": 0.65, "loop": false, "tag": "action", "speed": 0.0, "notifies": [{ "t": 0.26, "type": "tell" }, { "t": 0.35, "type": "hitbox_on" }, { "t": 0.44, "type": "hitbox_off" }] },
+    { "id": "atk_heavy_01", "file": "anim/atk_heavy_01.bin", "durationSec": 0.99, "loop": false, "tag": "action", "speed": 0.0, "notifies": [{ "t": 0.42, "type": "tell" }, { "t": 0.53, "type": "hitbox_on" }, { "t": 0.64, "type": "hitbox_off" }] },
+    { "id": "dodge_back", "file": "anim/dodge_back.bin", "durationSec": 0.55, "loop": false, "tag": "action", "speed": 0.0, "notifies": [{ "t": 0.15, "type": "iframe_on" }, { "t": 0.35, "type": "iframe_off" }] },
+    { "id": "parry_front", "file": "anim/parry_front.bin", "durationSec": 0.45, "loop": false, "tag": "action", "speed": 0.0, "notifies": [{ "t": 0.22, "type": "parry_on" }, { "t": 0.31, "type": "parry_off" }] },
+    { "id": "exec_finisher", "file": "anim/exec_finisher.bin", "durationSec": 0.9, "loop": false, "tag": "action", "speed": 0.0, "notifies": [{ "t": 0.3, "type": "exec_lock" }, { "t": 0.5, "type": "hitbox_on" }, { "t": 0.7, "type": "hitbox_off" }, { "t": 0.9, "type": "exec_end" }] },
+    { "id": "reaction_knockdown", "file": "anim/reaction_knockdown.bin", "durationSec": 0.5, "loop": false, "tag": "action", "speed": 0.0, "notifies": [{ "t": 0.2, "type": "downed" }] },
+    { "id": "add_light_front", "file": "anim/add_light_front.bin", "durationSec": 0.35, "loop": false, "tag": "additive", "speed": 0.0, "notifies": [] },
+    { "id": "add_stagger_front", "file": "anim/add_stagger_front.bin", "durationSec": 0.9, "loop": false, "tag": "additive", "speed": 0.0, "notifies": [] }
+  ]
+}

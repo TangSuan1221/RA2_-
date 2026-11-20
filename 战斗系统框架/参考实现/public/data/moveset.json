@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "skeleton": "humanoid_20",
+  "actions": [
+    {
+      "id": "atk_light_01",
+      "category": "light",
+      "anim": { "clip": "atk_light_01", "playRate": 1.0, "blendInMs": 90, "blendOutMs": 140 },
+      "phases": { "windupMs": 260, "activeMs": 90, "recoveryMs": 300 },
+      "tell": { "leadMs": 180, "type": "body_lunge", "sfx": "sfx_whoosh_light", "vfx": "vfx_tell_glint" },
+      "rootMotion": {
+        "mode": "warp",
+        "warpTarget": "target_chest",
+        "maxWarpDist": 1.6,
+        "curve": [[0.0, 0.0], [0.4, 0.55], [1.0, 0.95]]
+      },
+      "hitboxes": [
+        {
+          "startPct": 0.0, "endPct": 1.0,
+          "bone": "hand_r",
+          "localPos": [0, 0, 0.12], "localRot": [0, 0, 0, 1],
+          "size": [0.22, 0.22, 0.55],
+          "damage": 22, "poiseDamage": 20,
+          "knockback": 2.4, "hitstopMs": 60,
+          "hurtGroup": "torso",
+          "canHitProps": true, "canHitBreakable": false
+        }
+      ],
+      "cancel": {
+        "into": [
+          { "action": "atk_light_02", "fromPct": 0.6, "require": "hit", "inputWindow": [0.35, 0.95] },
+          { "action": "dodge_back", "fromPct": 0.5, "require": "always", "allowEarly": true, "inputWindow": [0.3, 1.0] }
+        ]
+      },
+      "requirements": { "minDist": 0.0, "maxDist": 1.45, "angleDeg": 70, "heightDeltaMax": 0.6, "targetState": ["idle", "stagger", "block", "attack"] },
+      "context": {
+        "tags": ["any"],
+        "replacesTo": { "wall_left": "atk_light_01_wall", "table": "atk_light_01_table" }
+      }
+    },
+    {
+      "id": "atk_light_01_wall",
+      "category": "light",
+      "anim": { "clip": "atk_light_01_wall", "playRate": 1.0, "blendInMs": 90, "blendOutMs": 140 },
+      "phases": { "windupMs": 260, "activeMs": 90, "recoveryMs": 300 },
+      "tell": { "leadMs": 180, "type": "weapon_raise", "sfx": "sfx_slam_left", "vfx": "vfx_tell_glint" },
+      "rootMotion": { "mode": "inPlace", "warpTarget": null, "maxWarpDist": 0.0, "curve": [[0.0, 0.0], [1.0, 0.0]] },
+      "hitboxes": [
+        {
+          "startPct": 0.0, "endPct": 1.0,
+          "bone": "hand_r",
+          "localPos": [-0.1, 0, 0.1], "localRot": [0, 0.38, 0, 0.92],
+          "size": [0.22, 0.22, 0.5],
+          "damage": 24, "poiseDamage": 26,
+          "knockback": 3.1, "hitstopMs": 70,
+          "hurtGroup": "torso",
+          "canHitProps": true, "canHitBreakable": true
+        }
+      ],
+      "cancel": { "into": [] },
+      "requirements": { "minDist": 0.0, "maxDist": 1.45, "angleDeg": 70, "heightDeltaMax": 0.6, "targetState": ["idle", "stagger", "block", "attack"] },
+      "context": { "tags": ["wall_left"], "replacesTo": {} }
+    },
+    {
+      "id": "atk_light_01_table",
+      "category": "light",
+      "anim": { "clip": "atk_light_01_table", "playRate": 1.0, "blendInMs": 90, "blendOutMs": 160 },
+      "phases": { "windupMs": 260, "activeMs": 90, "recoveryMs": 300 },
+      "tell": { "leadMs": 200, "type": "body_lunge", "sfx": "sfx_slam_table", "vfx": "vfx_tell_glint" },
+      "rootMotion": { "mode": "warp", "warpTarget": "target_chest", "maxWarpDist": 1.3, "curve": [[0.0, 0.0], [0.5, 0.7], [1.0, 0.9]] },
+      "hitboxes": [
+        {
+          "startPct": 0.0, "endPct": 1.0,
+          "bone": "hand_l",
+          "localPos": [0.05, -0.1, 0.15], "localRot": [0, 0, 0, 1],
+          "size": [0.2, 0.2, 0.45],
+          "damage": 20, "poiseDamage": 24,
+          "knockback": 2.0, "hitstopMs": 60,
+          "hurtGroup": "head",
+          "canHitProps": true, "canHitBreakable": true
+        }
+      ],
+      "cancel": { "into": [] },
+      "requirements": { "minDist": 0.0, "maxDist": 1.45, "angleDeg": 70, "heightDeltaMax": 0.6, "targetState": ["idle", "stagger", "block", "attack"] },
+      "context": { "tags": ["table"], "replacesTo": {} }
+    },
+    {
+      "id": "atk_light_02",
+      "category": "light",
+      "anim": { "clip": "atk_light_02", "playRate": 1.0, "blendInMs": 70, "blendOutMs": 140 },
+      "phases": { "windupMs": 260, "activeMs": 90, "recoveryMs": 300 },
+      "tell": { "leadMs": 160, "type": "body_lunge", "sfx": "sfx_whoosh_light", "vfx": "vfx_tell_glint" },
+      "rootMotion": { "mode": "warp", "warpTarget": "target_chest", "maxWarpDist": 1.6, "curve": [[0.0, 0.0], [0.4, 0.6], [1.0, 0.95]] },
+      "hitboxes": [
+        {
+          "startPct": 0.0, "endPct": 1.0,
+          "bone": "hand_l",
+          "localPos": [0, 0, 0.12], "localRot": [0, 0, 0, 1],
+          "size": [0.22, 0.22, 0.55],
+          "damage": 24, "poiseDamage": 20,
+          "knockback": 2.4, "hitstopMs": 60,
+          "hurtGroup": "torso",
+          "canHitProps": true, "canHitBreakable": false
+        }
+      ],
+      "cancel": {
+        "into": [
+          { "action": "atk_heavy_01", "fromPct": 0.7, "require": "hit", "input": "heavy", "inputWindow": [0.45, 0.95] },
+          { "action": "dodge_back", "fromPct": 0.5, "require": "always", "allowEarly": true, "inputWindow": [0.3, 1.0] }
+        ]
+      },
+      "requirements": { "minDist": 0.0, "maxDist": 1.45, "angleDeg": 70, "heightDeltaMax": 0.6, "targetState": ["idle", "stagger", "block", "attack"] },
+      "context": { "tags": ["any"], "replacesTo": {} }
+    },
+    {
+      "id": "atk_heavy_01",
+      "category": "heavy",
+      "anim": { "clip": "atk_heavy_01", "playRate": 1.0, "blendInMs": 120, "blendOutMs": 180 },
+      "phases": { "windupMs": 420, "activeMs": 110, "recoveryMs": 460 },
+      "tell": { "leadMs": 320, "type": "weapon_raise", "sfx": "sfx_whoosh_heavy", "vfx": "vfx_tell_heavy" },
+      "rootMotion": { "mode": "warp", "warpTarget": "target_chest", "maxWarpDist": 1.6, "curve": [[0.0, 0.0], [0.5, 0.5], [1.0, 0.9]] },
+      "hitboxes": [
+        {
+          "startPct": 0.0, "endPct": 1.0,
+          "bone": "hand_r",
+          "localPos": [0, -0.05, 0.18], "localRot": [0, 0, 0, 1],
+          "size": [0.3, 0.3, 0.7],
+          "damage": 34, "poiseDamage": 32,
+          "knockback": 4.2, "hitstopMs": 100,
+          "hurtGroup": "torso",
+          "canHitProps": true, "canHitBreakable": true
+        }
+      ],
+      "cancel": {
+        "into": [{ "action": "dodge_back", "fromPct": 0.75, "require": "whiff", "inputWindow": [0.6, 1.0] }]
+      },
+      "requirements": { "minDist": 0.0, "maxDist": 1.5, "angleDeg": 70, "heightDeltaMax": 0.6, "targetState": ["idle", "stagger", "block"] },
+      "context": { "tags": ["any"], "replacesTo": {} }
+    },
+    {
+      "id": "dodge_back",
+      "category": "dodge",
+      "anim": { "clip": "dodge_back", "playRate": 1.0, "blendInMs": 60, "blendOutMs": 100 },
+      "phases": { "windupMs": 150, "activeMs": 200, "recoveryMs": 200 },
+      "tell": { "leadMs": 100, "type": "footstep", "sfx": "sfx_dodge", "vfx": "none" },
+      "rootMotion": { "mode": "rootMotion", "warpTarget": null, "maxWarpDist": 0.0, "curve": [[0.0, 0.0], [0.3, 0.8], [1.0, 1.0]] },
+      "hitboxes": [],
+      "iframe": [0.0, 1.0],
+      "cancel": { "into": [{ "action": "atk_light_01", "fromPct": 0.85, "require": "always", "inputWindow": [0.7, 1.0] }] },
+      "requirements": { "minDist": 0.0, "maxDist": 99.0, "angleDeg": 360, "heightDeltaMax": 99.0, "targetState": ["idle", "walk", "jog", "sprint", "block", "attack", "stagger"] },
+      "context": { "tags": ["any"], "replacesTo": {} }
+    },
+    {
+      "id": "parry_front",
+      "category": "parry",
+      "anim": { "clip": "parry_front", "playRate": 1.0, "blendInMs": 50, "blendOutMs": 90 },
+      "phases": { "windupMs": 220, "activeMs": 90, "recoveryMs": 140 },
+      "tell": { "leadMs": 120, "type": "weapon_raise", "sfx": "sfx_parry_ready", "vfx": "vfx_parry_arc" },
+      "rootMotion": { "mode": "inPlace", "warpTarget": null, "maxWarpDist": 0.0, "curve": [[0.0, 0.0], [1.0, 0.0]] },
+      "hitboxes": [],
+      "parryWindow": [0.0, 1.0],
+      "cancel": { "into": [] },
+      "requirements": { "minDist": 0.0, "maxDist": 2.2, "angleDeg": 140, "heightDeltaMax": 0.8, "targetState": ["attack"] },
+      "context": { "tags": ["any"], "replacesTo": {} }
+    },
+    {
+      "id": "exec_finisher",
+      "category": "execution",
+      "anim": { "clip": "exec_finisher", "playRate": 1.0, "blendInMs": 140, "blendOutMs": 200 },
+      "phases": { "windupMs": 300, "activeMs": 200, "recoveryMs": 400 },
+      "tell": { "leadMs": 240, "type": "grapple", "sfx": "sfx_exec_start", "vfx": "vfx_exec_marker" },
+      "rootMotion": { "mode": "warp", "warpTarget": "target_neck", "maxWarpDist": 1.35, "curve": [[0.0, 0.0], [0.25, 0.8], [1.0, 0.95]] },
+      "hitboxes": [
+        {
+          "startPct": 0.0, "endPct": 1.0,
+          "bone": "hand_r",
+          "localPos": [0, 0, 0.1], "localRot": [0, 0, 0, 1],
+          "size": [0.25, 0.25, 0.6],
+          "damage": 999, "poiseDamage": 60,
+          "knockback": 0.0, "hitstopMs": 140,
+          "hurtGroup": "head",
+          "canHitProps": false, "canHitBreakable": false
+        }
+      ],
+      "cancel": { "into": [] },
+      "requirements": { "minDist": 0.0, "maxDist": 1.35, "angleDeg": 70, "heightDeltaMax": 0.5, "targetHpPct": 0.25, "targetState": ["stagger", "downed"] },
+      "context": { "tags": ["any"], "replacesTo": {} }
+    },
+    {
+      "id": "reaction_knockdown",
+      "category": "reaction",
+      "anim": { "clip": "reaction_knockdown", "playRate": 1.0, "blendInMs": 80, "blendOutMs": 200 },
+      "phases": { "windupMs": 100, "activeMs": 0, "recoveryMs": 400 },
+      "tell": { "leadMs": 90, "type": "growl", "sfx": "sfx_body_fall", "vfx": "none" },
+      "rootMotion": { "mode": "rootMotion", "warpTarget": null, "maxWarpDist": 0.0, "curve": [[0.0, 0.0], [1.0, 1.0]] },
+      "hitboxes": [],
+      "cancel": { "into": [] },
+      "requirements": { "minDist": 0.0, "maxDist": 99.0, "angleDeg": 360, "heightDeltaMax": 99.0, "targetState": ["downed"] },
+      "context": { "tags": ["any"], "replacesTo": {} }
+    }
+  ]
+}

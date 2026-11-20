@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "arena_wall",
+  "label": "玩家背靠 3m 高墙（墙面 z=-1.2），用于验证背后延伸线被剔除",
+  "bounds": { "minX": -8, "maxX": 8, "minZ": -1.2, "maxZ": 10 },
+  "groundY": 0,
+  "obstacles": [
+    { "id": "wall_back", "kind": "circle_approx", "x": 0, "z": -4.2, "r": 3.0, "height": 3.0, "note": "用大圆近似墙面，圆心在 z=-4.2，半径 3.0 → 墙表面 z=-1.2" }
+  ],
+  "props": [],
+  "playerSpawn": { "pos": [0, 0, 0], "yawDeg": 0 }
+}

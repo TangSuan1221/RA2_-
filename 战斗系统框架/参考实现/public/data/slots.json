@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "lines": 16,
+  "angleStepDeg": 22.5,
+  "rings": [1.55, 2.35, 3.2],
+  "maxAttackers": 2,
+  "maxApproach": 3,
+  "updateHz": 4,
+  "hysteresis": 0.35,
+  "probe": { "radius": 0.45, "height": 1.7, "ignoreTags": ["low_cover"] },
+  "blockShiftMaxSteps": 3,
+  "reserveTtlMs": 1500,
+  "releaseCooldownMs": 800,
+  "approachTtlMs": 3000,
+  "occupyTtlMs": 1200,
+  "occupyTolM": 0.25,
+  "occupyAngleDeg": 30,
+  "tokenFreezeMs": 300,
+  "execClearMs": 900,
+  "lineBias": { "front": 1.0, "side": 0.8, "back": 0.55 },
+  "scoreWeights": { "bias": 1.0, "crowd": 0.6, "ring": 0.4, "pref": 0.8 },
+  "roleReservations": {
+    "attacker": { "maxTokens": 2, "preferRings": [0, 1], "preferAngleDeg": 60 },
+    "flanker": { "maxTokens": 2, "preferRings": [2], "preferAngleDeg": 140 },
+    "rusher": { "maxTokens": 3, "preferRings": [0], "preferAngleDeg": 30 }
+  }
+}
